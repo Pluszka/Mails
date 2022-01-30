@@ -1,8 +1,3 @@
-#TODO: Create a letter using starting_letter.txt
-#for each name in invited_names.txt
-#Replace the [name] placeholder with the actual name.
-#Save the letters in the folder "ReadyToSend".
-
 with open('./Input/Letters/starting_letter.txt') as letter:
     letter = letter.readlines()
 
@@ -17,6 +12,6 @@ to_change = letter[0]
 
 for name in just_names:
     letter[0] = to_change.replace('[name]', f'{name}')
-    print(letter)
-    # with open(f'.\Output\ReadyToSend\InvitationFor{name}.txt', 'w') as invitation:
-    #     invitation.write(str(new_letter))
+    finished_letter = [' '.join(x for x in letter)]
+    with open(f'.\Output\ReadyToSend\InvitationFor{name}.txt', 'w') as invitation:
+        invitation.write(finished_letter[0])
